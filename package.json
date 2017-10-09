@@ -1,0 +1,23 @@
+{
+  "name": "propipe",
+  "version": "1.0.0",
+  "description": "Pipeline Pattern Design implementation using Promise and OOP",
+  "main": "propipe.js",
+  "directories": {
+    "example": "example",
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Pipeline",
+    "Promise",
+    "OOP"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blasvicco/propipe.git"
+  },
+  "author": "Blas Vicco",
+  "license": "GPL-3.0"
+}
