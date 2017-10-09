@@ -3,7 +3,7 @@
 This is a node module that implement a Pipeline Patter Design using Promise and OOP.
 
 ### Example:
-Please refer to the [a relative link]example/example.js file to see a running example.
+Please refer to the [example](example/example.js) file to see a running example.
 
 To run the example:
 1. Clone the repository
