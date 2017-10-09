@@ -65,11 +65,11 @@ PipelineFlow
   .pipe(new (PipeAlt()))
   .flow()
   .then((pkg) => {
-      //Final package state
-      console.log('########### Pipe flow successfully ###########');
-    })
-    .catch((err) => {
-        console.log(err);
-        console.log('!!!!!!!!!!!! Broken Pipe !!!!!!!!!!!!')
-    });
+    //Final package state
+    console.log('########### Pipe flow successfully ###########');
+  })
+  .catch((err) => {
+      console.log(err);
+      console.log('!!!!!!!!!!!! Broken Pipe !!!!!!!!!!!!')
+  });
 ```
