@@ -18,7 +18,7 @@ node example/example.js 1
 
 ### General Usage
 If you follow the example you will find how to use it but in general the idea is:
-```NODEJS
+```JAVASCRIPT
 //import the needed class definition
 let [PackageObj, PipelineAbstract, Pipeline] = require('propipe');
 
