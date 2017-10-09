@@ -60,9 +60,9 @@ class PipeAlt extends PipelineAbstract {
 PackageObj.init({attr_1: 'val_1', attr_2: 'val_2'});
 let PipelineFlow = new Pipeline(PackageObj);
 PipelineFlow
-  .pipe(new (Pipe('wahtever 1')))
-  .pipe(new (Pipe('wahtever 2')))
-  .pipe(new (PipeAlt()))
+  .pipe(new Pipe('wahtever 1'))
+  .pipe(new Pipe('wahtever 2'))
+  .pipe(new PipeAlt())
   .flow()
   .then((pkg) => {
     //Final package state
