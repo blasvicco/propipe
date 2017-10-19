@@ -1,4 +1,4 @@
-PackageObj = new(require('./src/PackageObj'))();
+PackageObj = require('./src/PackageObj');
 PipelineAbstract = require('./src/PipelineAbstract');
 Pipeline = require('./src/Pipeline');
 
