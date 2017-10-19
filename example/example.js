@@ -1,10 +1,4 @@
 let [PackageObj, PipelineAbstract, Pipeline] = require('../propipe');
-
-PackageObj.init({
-    step: 0,
-    msg: 'Initial state'
-});
-
 class Step extends PipelineAbstract {
     constructor(step, msg) {
         super();
@@ -47,7 +41,7 @@ class StepWhatEver extends PipelineAbstract {
 }
 class StepErrHandler extends PipelineAbstract {
     constructor() {
-      super();
+        super();
     }
     flow() {
         let that = this;
@@ -64,34 +58,33 @@ class StepErrHandler extends PipelineAbstract {
         });
     }
 }
-
 /**
-* This is an example of how we can use the module.
-* After instantiate the PipelineFlow obj then we pipe steps
-* each step or pipe is an instance of PipelineAbstract
-* that has an implementation of the flow action.
-**/
-
+ * This is an example of how we can use the module.
+ * After instantiate the PipelineFlow obj then we pipe steps
+ * each step or pipe is an instance of PipelineAbstract
+ * that has an implementation of the flow action.
+ **/
 function test(err) {
-  console.log('########### Starting Pipe flow ' + ((err == 1) ? 'with' : 'without') + ' error ###########');
-  let PipelineFlow = new Pipeline(PackageObj);
-  PipelineFlow
-    .pipe(new Step(1, '--> First step msg'))
-    .pipe(new Step(2, '--> Second step msg'))
-    .pipe(new StepWhatEver(err)) //1 err, 0 no err
-    .pipe(new StepErrHandler())
-    .pipe(new Step('N', '--> N step msg'))
-    .flow()
-    .then((pkg) => {
-      console.log('////// Final package state');
-      console.log(pkg);
-      console.log('########### Pipe flow successfully ###########');
-    })
-    .catch((err) => {
-        console.log(err);
-        console.log('!!!!!!!!!!!! Broken Pipe !!!!!!!!!!!!')
+    console.log('########### Starting Pipe flow ' + ((err == 1) ? 'with' : 'without') + ' error ###########');
+    let pkg = (new PackageObj()).init({
+        step: 0,
+        msg: 'Initial state'
     });
+    let PipelineFlow = new Pipeline(pkg);
+    PipelineFlow
+        .pipe(new Step(1, '--> First step msg'))
+        .pipe(new Step(2, '--> Second step msg'))
+        .pipe(new StepWhatEver(err)) //1 err, 0 no err
+        .pipe(new StepErrHandler())
+        .pipe(new Step('N', '--> N step msg'))
+        .flow().then((pkg) => {
+            console.log('////// Final package state');
+            console.log(pkg);
+            console.log('########### Pipe flow successfully ###########');
+        }).catch((err) => {
+            console.log(err);
+            console.log('!!!!!!!!!!!! Broken Pipe !!!!!!!!!!!!')
+        });
 }
-
 var myArgs = process.argv.slice(2);
 test(myArgs[0]); //1 err, 0 no err
