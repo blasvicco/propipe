@@ -1,5 +1,5 @@
 let PipelineAbstract = require('./PipelineAbstract');
-class Pipeline extends PipelineAbstract {
+module.exports = class Pipeline extends PipelineAbstract {
     constructor(pkg) {
         super();
         this.pkg = pkg;
@@ -15,4 +15,4 @@ class Pipeline extends PipelineAbstract {
         });
     }
 }
-module.exports = Pipeline;
+

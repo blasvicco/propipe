@@ -1,4 +1,4 @@
-class PackageInterface {
+module.exports = class PackageInterface {
     constructor() {
         let err = {
             100: 'Cannot construct Abstract/Interface instances directly',
@@ -16,4 +16,3 @@ class PackageInterface {
         }
     }
 }
-module.exports = PackageInterface;

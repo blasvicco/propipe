@@ -1,4 +1,4 @@
-class PipelineAbstract {
+module.exports = class PipelineAbstract {
     constructor() {
         let err = {
             100: 'Cannot construct Abstract/Interface instances directly',
@@ -23,4 +23,3 @@ class PipelineAbstract {
         return this;
     }
 }
-module.exports = PipelineAbstract;
