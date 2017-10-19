@@ -57,8 +57,8 @@ class PipeAlt extends PipelineAbstract {
 }
 
 //Pipeline chains will looks like
-PackageObj.init({attr_1: 'val_1', attr_2: 'val_2'});
-let PipelineFlow = new Pipeline(PackageObj);
+let pkg = (new PackageObj()).init({attr_1: 'val_1', attr_2: 'val_2'});
+let PipelineFlow = new Pipeline(pkg);
 PipelineFlow
   .pipe(new Pipe('wahtever 1'))
   .pipe(new Pipe('wahtever 2'))
