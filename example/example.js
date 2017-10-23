@@ -6,14 +6,13 @@ class Step extends PipelineAbstract {
         this.msg = msg;
     }
     flow() {
-        let that = this;
         return new Promise((Resolve, Reject) => {
-            that.promise.then((pkg) => {
+            this.promise.then((pkg) => {
                 console.log('### Step Action ###');
                 console.log(pkg);
                 Resolve({
-                    step: that.step,
-                    msg: 'Step ' + that.msg
+                    step: this.step,
+                    msg: 'Step ' + this.msg
                 });
             }).catch((e) => Reject(e));
         });
@@ -25,14 +24,13 @@ class StepWhatEver extends PipelineAbstract {
         this.errCode = errCode;
     }
     flow() {
-        let that = this;
         return new Promise((Resolve, Reject) => {
-            that.promise.then((pkg) => {
+            this.promise.then((pkg) => {
                 console.log('### Whatever Action ###');
                 console.log(pkg);
                 console.log('////// We change the package obj as we want...');
                 Resolve({
-                    err: that.errCode,
+                    err: this.errCode,
                     msg: 'There is no really an error... we are just testing!'
                 });
             }).catch((e) => Reject(e));
@@ -44,9 +42,8 @@ class StepErrHandler extends PipelineAbstract {
         super();
     }
     flow() {
-        let that = this;
         return new Promise((Resolve, Reject) => {
-            that.promise.then((pkg) => {
+            this.promise.then((pkg) => {
                 console.log('### Error Handler Action ###');
                 console.log(pkg);
                 if (pkg.err == 1) Reject(pkg.msg);
