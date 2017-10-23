@@ -1,6 +1,6 @@
 {
   "name": "propipe",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pipeline Pattern Design implementation using Promise and OOP",
   "main": "propipe.js",
   "directories": {

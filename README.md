@@ -33,9 +33,8 @@ class Pipe extends PipelineAbstract {
   //We need to implement the flow method
   //flow method always should return a Promise
   flow() {
-    let that = this;
     return new Promise((Resolve, Reject) => {
-        that.promise.then((pkg) => {
+        this.promise.then((pkg) => {
           //pkg is the package flowing through the pipe
           //we performe the actions we need here...
           pkg = {attr_1: 'whatever 1', attr_2: 'whatever 2'};
@@ -47,9 +46,8 @@ class Pipe extends PipelineAbstract {
 
 class PipeAlt extends PipelineAbstract {
   flow() {
-    let that = this;
     return new Promise((Resolve, Reject) => {
-        that.promise.then((pkg) => {
+        this.promise.then((pkg) => {
           Resolve({attr_1: 'whatever 1', attr_new: 'whatever'});
         }).catch((e) => Reject(e));
     });
