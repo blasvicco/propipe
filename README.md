@@ -58,8 +58,8 @@ class PipeAlt extends PipelineAbstract {
 let pkg = (new PackageObj()).init({attr_1: 'val_1', attr_2: 'val_2'});
 let PipelineFlow = new Pipeline(pkg);
 PipelineFlow
-  .pipe(new Pipe('wahtever 1'))
-  .pipe(new Pipe('wahtever 2'))
+  .pipe(new Pipe('whatever 1'))
+  .pipe(new Pipe('whatever 2'))
   .pipe(new PipeAlt())
   .flow()
   .then((pkg) => {
