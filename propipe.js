@@ -1,5 +1,11 @@
-PackageObj = require('./src/PackageObj');
-PipelineAbstract = require('./src/PipelineAbstract');
-Pipeline = require('./src/Pipeline');
+const AbstractPipeline = require('./src/AbstractPipeline');
+const InterfacePackage = require('./src/InterfacePackage');
+const Package = require('./src/Package');
+const Pipeline = require('./src/Pipeline');
 
-module.exports = [PackageObj, PipelineAbstract, Pipeline];
+module.exports = {
+  AbstractPipeline,
+  InterfacePackage,
+  Package,
+  Pipeline,
+};
